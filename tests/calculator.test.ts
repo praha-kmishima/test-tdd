@@ -39,6 +39,10 @@ describe('Calculator', () => {
       expect(Calculator.execute(['add', '1000', '1'])).toBe('too big');
     });
 
+    test('小数点を含む数値の加算が正しく動作する', () => {
+      expect(Calculator.execute(['add', '1.5', '2.5'])).toBe(4);
+    });
+
 
   });
 }); 
