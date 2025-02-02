@@ -24,9 +24,14 @@ export class Calculator {
         }
         return addResult;
       case 'multiply':
-        return numbers.reduce((acc, curr) => acc * curr, 1);
+        const multiplyResult = numbers.reduce((acc, curr) => acc * curr, 1);
+        if (multiplyResult > 1000) {
+          return 'big big number';
+        }
+        return multiplyResult;
       case 'subtract':
         // 最初の値から減算する
+
         const initialValue = numbers[0];
         const subtractResult = numbers.slice(1).reduce((acc, curr) => acc - curr, initialValue);
         if (subtractResult < 0) {

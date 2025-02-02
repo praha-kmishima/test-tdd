@@ -75,6 +75,9 @@ describe('Calculator', () => {
       expect(Calculator.execute(['multiply', '2', '0', '4'])).toBe(0);
     });
 
-      
+    test('結果が1000を超える場合は "big big number" を返す', () => {
+      expect(Calculator.execute(['multiply', '1000', '1', '2'])).toBe('big big number');
+    });
+
   });
 }); 
