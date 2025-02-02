@@ -13,5 +13,11 @@ describe('Calculator', () => {
     test('引数が1個未満の場合エラーを返す', () => {
       expect(Calculator.execute([])).toBe('Error: 引数が不足しています');
     });
+
+    test('引数が31個以上の場合エラーを返す', () => {
+      const manyArgs = ['add', ...Array(31).fill('1')];
+      expect(Calculator.execute(manyArgs)).toBe('Error: 引数が多すぎます');
+    });
+
   });
 }); 
