@@ -30,5 +30,10 @@ describe('Calculator', () => {
     test('2つの正の整数を足して正しい結果を返す', () => {
       expect(Calculator.execute(['add', '1', '2'])).toBe(3);
     });
+
+    test('3つ以上の数値を足して正しい結果を返す', () => {
+      expect(Calculator.execute(['add', '1', '2', '3'])).toBe(6);
+    });
+
   });
 }); 
