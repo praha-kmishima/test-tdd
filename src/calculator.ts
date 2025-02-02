@@ -18,9 +18,14 @@ export class Calculator {
 
     switch (operation) {
       case 'add':
-        return numbers.reduce((acc, curr) => acc + curr, 0);
+        const result = numbers.reduce((acc, curr) => acc + curr, 0);
+        if (result > 1000) {
+          return 'too big';
+        }
+        return result;
       case 'multiply':
         return numbers.reduce((acc, curr) => acc * curr, 1);
+
       default:
         return 'Error: 不正な操作です';
     }
