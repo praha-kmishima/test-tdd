@@ -8,7 +8,7 @@ export class Calculator {
       return 'Error: 引数が多すぎます';
     }
 
-    if (args.some(arg => isNaN(Number(arg)))) {
+    if (args.slice(1).some(arg => isNaN(Number(arg)))) {
       return 'Error: 数値以外の引数が含まれています';
     }
 
