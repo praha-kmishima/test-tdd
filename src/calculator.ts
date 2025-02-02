@@ -18,16 +18,22 @@ export class Calculator {
 
     switch (operation) {
       case 'add':
-        const result = numbers.reduce((acc, curr) => acc + curr, 0);
-        if (result > 1000) {
+        const addResult = numbers.reduce((acc, curr) => acc + curr, 0);
+        if (addResult > 1000) {
           return 'too big';
         }
-        return result;
+        return addResult;
       case 'multiply':
         return numbers.reduce((acc, curr) => acc * curr, 1);
-
+      case 'subtract':
+        // 最初の値から減算する
+        const initialValue = numbers[0];
+        const subtractResult = numbers.slice(1).reduce((acc, curr) => acc - curr, initialValue);
+        return subtractResult;
       default:
         return 'Error: 不正な操作です';
+
+
     }
   }
 } 
