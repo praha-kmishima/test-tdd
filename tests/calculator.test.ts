@@ -35,5 +35,10 @@ describe('Calculator', () => {
       expect(Calculator.execute(['add', '1', '2', '3'])).toBe(6);
     });
 
+    test('結果が1000を超える場合は "too big" を返す', () => {
+      expect(Calculator.execute(['add', '1000', '1'])).toBe('too big');
+    });
+
+
   });
 }); 
