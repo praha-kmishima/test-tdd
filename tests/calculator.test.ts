@@ -52,6 +52,10 @@ describe('Calculator', () => {
     test('3つ以上の数値の連続した減算が正しく動作する', () => {
       expect(Calculator.execute(['subtract', '10', '2', '3'])).toBe(5);
     });
-      
+
+    test('結果が負の数になる場合は "negative number" を返す', () => {
+      expect(Calculator.execute(['subtract', '1', '2'])).toBe('negative number');
+    });
+
   });
 }); 
