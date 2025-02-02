@@ -8,6 +8,6 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/script.ts"
+    "start": "ts-node src/calculator.ts"
   }
 }

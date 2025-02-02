@@ -1,6 +1,24 @@
 import { Calculator } from '../src/calculator';
+import { spawn } from 'child_process';
 
 describe('Calculator', () => {
+  describe('標準入出力のテスト', () => {
+    test('標準入力からの入力を正しく受け取る', () => {
+      const input = 'add 1 2';
+      const output = '3';
+      const childProcess = spawn(process.execPath, ['../src/calculator.js'], {
+        stdio: 'pipe'
+      });
+      childProcess.stdin.write(input);
+      childProcess.stdin.end();
+      
+      childProcess.stdout.on('data', (data) => {
+        expect(data.toString()).toBe(output);
+      });
+    });
+  });
+
+
   describe('基本機能', () => {
     test('コマンドライン引数からoperationと数値を正しく取得できる', () => {
       // add操作のテスト
