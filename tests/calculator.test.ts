@@ -19,5 +19,10 @@ describe('Calculator', () => {
       expect(Calculator.execute(manyArgs)).toBe('Error: 引数が多すぎます');
     });
 
+    test('数値以外の引数が含まれる場合エラーを返す', () => {
+      expect(Calculator.execute(['add', '1', 'abc', '2']))
+        .toBe('Error: 数値以外の引数が含まれています');
+    });
+
   });
 }); 
