@@ -57,5 +57,10 @@ describe('Calculator', () => {
       expect(Calculator.execute(['subtract', '1', '2'])).toBe('negative number');
     });
 
+    test('小数点を含む数値の減算が正しく動作する', () => {
+      expect(Calculator.execute(['subtract', '2.5', '1.5'])).toBe(1);
+    });
+
+
   });
 }); 
