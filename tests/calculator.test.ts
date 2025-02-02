@@ -71,7 +71,10 @@ describe('Calculator', () => {
       expect(Calculator.execute(['multiply', '2', '3', '4'])).toBe(24);
     });
 
-    
+    test('0を含む数値の乗算が正しく動作する', () => {
+      expect(Calculator.execute(['multiply', '2', '0', '4'])).toBe(0);
+    });
 
+      
   });
 }); 
