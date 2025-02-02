@@ -1,5 +1,19 @@
 export class Calculator {
   static execute(args: string[]): number | string {
-    return 0; // とりあえずダミーの実装
+    if (args.length < 1) {
+      return 'Error: 引数が不足しています';
+    }
+
+    const operation = args[0];
+    const numbers = args.slice(1).map(Number);
+
+    switch (operation) {
+      case 'add':
+        return numbers.reduce((acc, curr) => acc + curr, 0);
+      case 'multiply':
+        return numbers.reduce((acc, curr) => acc * curr, 1);
+      default:
+        return 'Error: 不正な操作です';
+    }
   }
 } 
