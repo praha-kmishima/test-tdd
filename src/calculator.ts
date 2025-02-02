@@ -38,7 +38,13 @@ export class Calculator {
           return 'negative number';
         }
         return subtractResult;
+      case 'divide':
+        const divideInitialValue = numbers[0];
+        const divideResult = numbers.slice(1).reduce((acc, curr) => acc / curr, divideInitialValue);
+        return divideResult;
       default:
+
+
         return 'Error: 不正な操作です';
 
 
