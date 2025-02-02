@@ -25,4 +25,10 @@ describe('Calculator', () => {
     });
 
   });
+
+  describe('加算（add）のテスト', () => {
+    test('2つの正の整数を足して正しい結果を返す', () => {
+      expect(Calculator.execute(['add', '1', '2'])).toBe(3);
+    });
+  });
 }); 
