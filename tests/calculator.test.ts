@@ -60,7 +60,12 @@ describe('Calculator', () => {
     test('小数点を含む数値の減算が正しく動作する', () => {
       expect(Calculator.execute(['subtract', '2.5', '1.5'])).toBe(1);
     });
+  });
 
+  describe('乗算（multiply）のテスト', () => {
+    test('2つの数値の乗算が正しく動作する', () => {
+      expect(Calculator.execute(['multiply', '2', '3'])).toBe(6);
+    });
 
   });
 }); 
