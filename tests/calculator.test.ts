@@ -67,5 +67,11 @@ describe('Calculator', () => {
       expect(Calculator.execute(['multiply', '2', '3'])).toBe(6);
     });
 
+    test('3つ以上の数値の乗算が正しく動作する', () => {
+      expect(Calculator.execute(['multiply', '2', '3', '4'])).toBe(24);
+    });
+
+    
+
   });
 }); 
