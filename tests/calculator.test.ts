@@ -1,0 +1,17 @@
+import { Calculator } from '../src/calculator';
+
+describe('Calculator', () => {
+  describe('基本機能', () => {
+    test('コマンドライン引数からoperationと数値を正しく取得できる', () => {
+      // add操作のテスト
+      expect(Calculator.execute(['add', '1', '2'])).toBe(3);
+      
+      // multiply操作のテスト
+      expect(Calculator.execute(['multiply', '2', '3'])).toBe(6);
+    });
+
+    test('引数が1個未満の場合エラーを返す', () => {
+      expect(Calculator.execute([])).toBe('Error: 引数が不足しています');
+    });
+  });
+}); 
