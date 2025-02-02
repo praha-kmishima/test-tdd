@@ -83,4 +83,13 @@ describe('Calculator', () => {
       expect(Calculator.execute(['multiply', '2.5', '1.5'])).toBe(3.75);
     });
   });
+
+  describe('除算（divide）のテスト', () => {
+    test('2つの数値の除算が正しく動作する', () => {
+      expect(Calculator.execute(['divide', '6', '3'])).toBe(2);
+    });
+
+    
+  });
+
 }); 
