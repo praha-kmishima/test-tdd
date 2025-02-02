@@ -49,5 +49,9 @@ describe('Calculator', () => {
       expect(Calculator.execute(['subtract', '5', '3'])).toBe(2);
     });
 
+    test('3つ以上の数値の連続した減算が正しく動作する', () => {
+      expect(Calculator.execute(['subtract', '10', '2', '3'])).toBe(5);
+    });
+      
   });
 }); 
