@@ -93,6 +93,13 @@ describe('Calculator', () => {
       expect(Calculator.execute(['divide', '6', '0'])).toBe('Error: 0による除算はできません');
     });
 
+    test('小数点を含む数値の除算が正しく動作する', () => {
+      expect(Calculator.execute(['divide', '6.0', '1.2'])).toBe(5.0);
+      expect(Calculator.execute(['divide', '6.0', '1.2', '2.0'])).toBe(2.5);
+    });
+
+
+
   });
 
 
