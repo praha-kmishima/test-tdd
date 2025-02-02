@@ -42,7 +42,12 @@ describe('Calculator', () => {
     test('小数点を含む数値の加算が正しく動作する', () => {
       expect(Calculator.execute(['add', '1.5', '2.5'])).toBe(4);
     });
+  });
 
+  describe('減算（subtract）のテスト', () => {
+    test('2つの数値の減算が正しく動作する', () => {
+      expect(Calculator.execute(['subtract', '5', '3'])).toBe(2);
+    });
 
   });
 }); 
