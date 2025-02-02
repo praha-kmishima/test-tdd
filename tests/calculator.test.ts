@@ -89,7 +89,11 @@ describe('Calculator', () => {
       expect(Calculator.execute(['divide', '6', '3'])).toBe(2);
     });
 
-    
+    test('0による除算でエラーを返す', () => {
+      expect(Calculator.execute(['divide', '6', '0'])).toBe('Error: 0による除算はできません');
+    });
+
   });
+
 
 }); 
