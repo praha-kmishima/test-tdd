@@ -29,9 +29,13 @@ export class Calculator {
         // 最初の値から減算する
         const initialValue = numbers[0];
         const subtractResult = numbers.slice(1).reduce((acc, curr) => acc - curr, initialValue);
+        if (subtractResult < 0) {
+          return 'negative number';
+        }
         return subtractResult;
       default:
         return 'Error: 不正な操作です';
+
 
 
     }
