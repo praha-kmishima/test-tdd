@@ -4,6 +4,10 @@ export class Calculator {
       return 'Error: 引数が不足しています';
     }
 
+    if (args.length > 31) {
+      return 'Error: 引数が多すぎます';
+    }
+
     const operation = args[0];
     const numbers = args.slice(1).map(Number);
 
