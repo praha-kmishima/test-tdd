@@ -79,5 +79,8 @@ describe('Calculator', () => {
       expect(Calculator.execute(['multiply', '1000', '1', '2'])).toBe('big big number');
     });
 
+    test('小数点を含む数値の乗算が正しく動作する', () => {
+      expect(Calculator.execute(['multiply', '2.5', '1.5'])).toBe(3.75);
+    });
   });
 }); 
