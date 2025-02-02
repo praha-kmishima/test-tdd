@@ -40,9 +40,14 @@ export class Calculator {
         return subtractResult;
       case 'divide':
         const divideInitialValue = numbers[0];
+        // 0で除算した場合はエラーを返す
+        if (numbers.slice(1).some(arg => arg === 0)) {
+          return 'Error: 0による除算はできません';
+        }
         const divideResult = numbers.slice(1).reduce((acc, curr) => acc / curr, divideInitialValue);
         return divideResult;
       default:
+
 
 
         return 'Error: 不正な操作です';
