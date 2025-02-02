@@ -56,4 +56,11 @@ export class Calculator {
 
     }
   }
+}
+
+// メイン実行部分を追加
+if (process.argv.length > 2) {
+  const args = process.argv.slice(2);
+  const result = Calculator.execute(args);
+  console.log(result);
 } 
